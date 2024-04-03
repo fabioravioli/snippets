@@ -1,0 +1,40 @@
+.logos-slide img{
+    margin: 10px; /* imposta la distanza tra le immagini dello slider */
+}
+
+.logos-slide {
+    display: inline-block;
+
+    /* modificare il primo valore per aumentare/diminuire la velocità dello slider */
+    animation: 20s slide infinite linear;
+}
+
+.logos {
+    overflow: hidden; /* nasconde il contenuto in eccesso */
+    white-space: nowrap; /* fa in modo che il contenuto in eccesso non occupi una nuova riga */
+}
+
+/* lo slider si ferma quando il mouse ci passa sopra */
+.logos:hover .logos-slide {
+    animation-play-state: paused;
+}
+
+
+section#slider img {
+    width: 90px; /* imposta la dimensione delle immagini nello slider */
+    filter: saturate(0%); /* elimina la saturazione dell'immagine */
+}
+
+
+/* 
+necessario a realizzare l'animazione scorrimento;
+invertire i valori 0% / 100% per uno scorrimento sx - dx
+*/
+@keyframes slide {
+    from {
+        transform: translateX(0%);
+    }
+    to {
+        transform: translateX(-100%);
+    }
+}
